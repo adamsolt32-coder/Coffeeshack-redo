@@ -1,0 +1,93 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --color-coffee-50: #fdf8f0;
+  --color-coffee-100: #f5e6d0;
+  --color-coffee-200: #e8cba0;
+  --color-coffee-300: #d4a56a;
+  --color-coffee-400: #c28a44;
+  --color-coffee-500: #a06e30;
+  --color-coffee-600: #7d5628;
+  --color-coffee-700: #654320;
+  --color-coffee-800: #54371b;
+  --color-coffee-900: #3a2613;
+  --color-coffee-950: #1f140a;
+  --color-cream-50: #fefcf9;
+  --color-cream-100: #fdf8f0;
+  --color-cream-200: #f9eedb;
+  --color-cream-300: #f3dcb8;
+  --color-cream-400: #ecc490;
+  --color-cream-500: #e3a861;
+  --color-coffee-dark: #2c1810;
+  --color-charcoal: #1a1a1a;
+  --color-warm-gray: #8b7d6b;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans text-charcoal antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  ::selection {
+    @apply bg-coffee-200 text-coffee-900;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
+  .stagger-6 { animation-delay: 0.6s; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
